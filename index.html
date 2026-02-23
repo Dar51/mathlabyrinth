@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="mobile-web-app-capable" content="yes">
+    <title>Math Labyrinth Puzzle</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Math Labyrinth Puzzle</h1>
+        <div class="game-info">
+            <div class="info-item">
+                <span>Level: </span>
+                <span id="level">1</span>
+            </div>
+            <div class="info-item">
+                <span>Problems Solved: </span>
+                <span id="solved">0</span>
+            </div>
+        </div>
+        <div class="canvas-wrap"><canvas id="gameCanvas"></canvas></div>
+        <div id="mathModal" class="modal">
+            <div class="modal-content">
+                <h2>Solve the Problem!</h2>
+                <p id="problemText"></p>
+                <input type="text" id="answerInput" inputmode="numeric" placeholder="Enter your answer" autocomplete="off">
+                <div class="modal-buttons">
+                    <button id="submitAnswer">Submit</button>
+                    <button id="skipProblem" class="skip-btn">Skip (Penalty)</button>
+                </div>
+                <p id="feedback"></p>
+            </div>
+        </div>
+        <div class="controls">
+            <p class="desktop-hint">Use Arrow Keys or WASD to move</p>
+            <div id="dpad" class="dpad" aria-label="Movement controls">
+                <button type="button" class="dpad-btn dpad-up" data-dir="up" aria-label="Move up">▲</button>
+                <button type="button" class="dpad-btn dpad-left" data-dir="left" aria-label="Move left">◀</button>
+                <button type="button" class="dpad-btn dpad-right" data-dir="right" aria-label="Move right">▶</button>
+                <button type="button" class="dpad-btn dpad-down" data-dir="down" aria-label="Move down">▼</button>
+            </div>
+            <button id="newGame" onclick="if(typeof newGame === 'function') { newGame(); } else { console.error('newGame function not found'); }">New Game</button>
+        </div>
+    </div>
+    <script src="game.js"></script>
+</body>
+</html>

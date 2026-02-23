@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Game Test</title>
+</head>
+<body>
+    <h1>Testing Game Files</h1>
+    <p>Open browser console (F12) to see messages.</p>
+    <canvas id="gameCanvas" style="border: 1px solid black; width: 750px; height: 750px;"></canvas>
+    <script>
+        console.log('Test script loaded');
+        const canvas = document.getElementById('gameCanvas');
+        if (canvas) {
+            console.log('Canvas found!');
+            const ctx = canvas.getContext('2d');
+            if (ctx) {
+                console.log('2D context obtained!');
+                ctx.fillStyle = 'red';
+                ctx.fillRect(10, 10, 100, 100);
+                console.log('Red square drawn - canvas is working!');
+            } else {
+                console.error('Could not get 2D context');
+            }
+        } else {
+            console.error('Canvas not found');
+        }
+    </script>
+</body>
+</html>
